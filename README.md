@@ -1,7 +1,7 @@
 # TeXcalculator
 ## Resumo
 
- O projeto TeXcalculator é um site desenvolvido em Python 3 em conjunto com o framework Flask que receberá entradas do ambiente matemático .tex do LaTeX e realizará cálculos diversos com ele, bem como poderá fazer um preview da entrada em LaTeX escrita pelo usuário.  O programa contará com uma interface amigável até mesmo para quem não tem total domínio da linguagem.
+ O projeto TeXcalculator é uma GUI desenvolvida em Python 3 em conjunto com o framework Flask que receberá entradas do ambiente matemático .tex do LaTeX e realizará cálculos diversos com ele, bem como poderá fazer um preview da entrada em LaTeX escrita pelo usuário.  O programa contará com uma interface amigável até mesmo para quem não tem total domínio da linguagem.
 
 ## Motivação
  A motivação vem das várias vezes em que precisei expressar uma linha de raciocínio por meio de equações e não ter um ambiente rápido para compilar e nem calcular elas de forma que fosse clara para todos. Uma grande inspiração foi o  [Symbolab](https://pt.symbolab.com/), que aceita entradas em LaTeX e realiza inúmeros cálculos matemáticos com o auxílio da linguagem **Mathematica**. A ideia seria fazer algo ainda de ainda mais rápido acesso.
