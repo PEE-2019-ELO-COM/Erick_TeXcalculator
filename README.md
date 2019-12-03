@@ -78,7 +78,7 @@ Fotos de exemplos tanto da feature preview quanto da 'calcular' foram adicionada
 
 ## Futuras implementações
 
-### Aprimoramento da GUI
+### Aprimoramento da GUI (esboço GUI)
 O código cumpriu o seu propósito e agora o próximo passo é tornar a interface mais amigável por meiod e adição de atalhos de forma que iniciantes e leigos em LaTeX possam também usufruir da ferramenta ao máximo.
 ![Layout do programa feito no Adobe Illustrator](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/blob/master/main_layout.png?raw=true)
 
