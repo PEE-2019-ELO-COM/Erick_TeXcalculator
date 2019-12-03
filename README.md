@@ -86,3 +86,7 @@ O código cumpriu o seu propósito e agora o próximo passo é tornar a interfac
 
 É desejável que em uma futura atualização sejam implementadas mais operações ao repertório da calculadora tais como operações vetoriais/ matriciais.
 
+### Desenvolver um compilador
+
+Tendo em vista o tamanho da síntaxe da linguagem LaTeX, que não existe um tradutor completo o suficiente que faça LaTeX -> Python e nem o contrário. No entanto, existem algunsjá muito bons como os utilizados pelo site Symbolab (citado acima) e WolframAlpha (este até mesmo desenvolveu uma linguagem para abrangir inicalmente este propósito). A ideia seria abranger as possibilidades ao criar um compilador que simule um Parser confiávelLaTeX -> Python para as operações mais comuns.
+
