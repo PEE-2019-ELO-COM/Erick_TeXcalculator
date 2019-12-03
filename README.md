@@ -49,7 +49,7 @@ Há um campo de diálogo para o usuário chamado 'input', o qual o usuário deve
 
 Após o usuário fornecer a entrada, basta que ele escolha uma das opções disponíveis: preview ou calcular.
 
-- Preview: esta feature faz com que o usuário visualize o output do seu código para verificar se escreveu tudo certo. Essa função já está completamente implementada até o presente momento e conta com grande parte dos comandos disponíveis no ambiente matemático LaTeX. Para utilizar essa feature, o usuário deve entrar com o seu código entre dois pontos antecedido de 'preview'. Ou seja, se quiser visualizar o preview de 'a+b', o código de entrada deve ser **preview: a+b : **  
+- Preview: esta feature faz com que o usuário visualize o output do seu código para verificar se escreveu tudo certo. Essa função já está completamente implementada até o presente momento e conta com grande parte dos comandos disponíveis no ambiente matemático LaTeX. Para utilizar essa feature, o usuário deve entrar com o seu código entre dois pontos antecedido de 'preview'. Ou seja, se quiser visualizar o preview de 'a+b', o código de entrada deve ser **preview: a+b :**  
 - Calcular: esta feature faz cálculos de algumas operações do ambiente matemático, que já foram mencionados anteriormente. O código já está implementado com as operações que foram descritas anteriormente. Para usar, bsta entrar a equação que deseja calcular diretamente na GUI.
 
 #### Exemplo
@@ -88,5 +88,5 @@ O código cumpriu o seu propósito e agora o próximo passo é tornar a interfac
 
 ### Desenvolver um compilador
 
-Tendo em vista o tamanho da síntaxe da linguagem LaTeX, que não existe um tradutor completo o suficiente que faça LaTeX -> Python e nem o contrário. No entanto, existem algunsjá muito bons como os utilizados pelo site Symbolab (citado acima) e WolframAlpha (este até mesmo desenvolveu uma linguagem para abrangir inicalmente este propósito). A ideia seria abranger as possibilidades ao criar um compilador que simule um Parser confiávelLaTeX -> Python para as operações mais comuns.
+Tendo em vista o tamanho da síntaxe da linguagem LaTeX, que não existe um tradutor completo o suficiente que faça LaTeX -> Python e nem o contrário. No entanto, existem alguns já muito bons como os utilizados pelo site Symbolab (citado acima) e WolframAlpha (este até mesmo desenvolveu uma linguagem para abrangir inicalmente este propósito). A ideia seria abranger as possibilidades ao criar um compilador que simule um Parser confiávelLaTeX -> Python para as operações mais comuns. O código que foi desenvolvido, para atualmente para este projeto, foi todo feito por meio de manipulaçãp de strings.
 
