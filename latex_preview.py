@@ -1,24 +1,30 @@
 import matplotlib
-import matplotlib.pyplot as plt
-
+matplotlib.rcParams['text.usetex'] = True
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 matplotlib.use('TkAgg')
 
-
 from tkinter import *
 from tkinter.ttk import *
+import calculator as calc
+
+
 
 def graph(text):
     tmptext = entry.get()
-    tmptext = "$ \\displaystyle "+tmptext+"$"
-
+    if calc.preview(tmptext)[1]==1:
+        tmptext = calc.preview(tmptext)[0]
+        tmptext = '$\displaystyle '+tmptext+"$"
+    else:
+        tmptext = calc.operator(tmptext)
+        tmptext = calc.latifa(tmptext)
+        tmptext = '$\displaystyle '+tmptext+"$"
+        
     ax.clear()
     ax.text(0.2, 0.4, tmptext, fontsize = 24)  
     canvas.draw()
-
-
+   
 root = Tk()
-
+root.title('TeXcalculator')
 mainframe = Frame(root)
 mainframe.pack()
 
