@@ -1,7 +1,7 @@
 # TeXcalculator
 ## Resumo
 
- O projeto TeXcalculator é uma GUI desenvolvida em Python 3 em conjunto com o framework Flask que receberá entradas do ambiente matemático .tex do LaTeX e realizará cálculos diversos com ele, bem como poderá fazer um preview da entrada em LaTeX escrita pelo usuário.  O programa contará com uma interface amigável até mesmo para quem não tem total domínio da linguagem.
+ O projeto TeXcalculator é uma GUI desenvolvida em Python 3 que recebe entradas do ambiente matemático .tex do LaTeX e realizará cálculos diversos com ele, bem como poderá fazer um preview da entrada em LaTeX escrita pelo usuário. Ideal para quem quer fazer rápida conferência de símbolos matemáticos ou expressar melhor uma ideia/equação. Além disso, também pode auxiliar como consulta rápida nos estudos como uma calculadora avançada que pode ser consultada até mesmo sem internet.
 
 ## Motivação
  A motivação vem das várias vezes em que precisei expressar uma linha de raciocínio por meio de equações e não ter um ambiente rápido para compilar e nem calcular elas de forma que fosse clara para todos. Uma grande inspiração foi o  [Symbolab](https://pt.symbolab.com/), que aceita entradas em LaTeX e realiza inúmeros cálculos matemáticos com o auxílio da linguagem **Mathematica**. A ideia seria fazer algo ainda de ainda mais rápido acesso.
@@ -10,11 +10,11 @@
 
 - Distribuição LaTeX ([TeX Live](https://www.tug.org/texlive/), [MiKTeX](https://miktex.org/) ..)
 - Python 3
-- ANTRL 4 (Parse generator) [LINK](https://www.antlr.org/)
 - sympy package
-- numpy package
+- regular expressions package
+- tKinter package
 - matplotlib package
-- Flask 1.0
+
 
 ## Funcionalidades
 Até o momento, a calculadora tem as seguintes funções:
@@ -23,6 +23,8 @@ Até o momento, a calculadora tem as seguintes funções:
 - Soma
 - Subtração
 - Divisão
+- Exponencial
+- Log
 - Multiplicação
 - Integral indefinida
 - Derivada
@@ -38,35 +40,33 @@ Os conceitos utilizados foram retirados dos seguintes tutoriais na internet:
 - [Como instalar ANTLR no Windows](https://www.youtube.com/watch?v=p2gIBPz69DM&t=3s)
 - [Como usar ANTLR (gerador de compilador)](https://www.youtube.com/watch?v=UIQBavUvmXc&t=1351s)
 - [Sympy examples tutorial](http://zetcode.com/python/sympy/)
-- [Curso de Flask](https://www.youtube.com/playlist?list=PL3BqW_m3m6a05ALSBW02qDXmfDKIip2KX)
 
 ### Como usar o programa (desenvolvimento atual)
 
 #### Entradas
-Há um campo de diálogo para o usuário chamado 'input', o qual o usuário deverá entrar com uma string no formato LaTeX sem precisar declarar o ambiente matemático ('$').
+Há um campo de diálogo para o usuário chamado 'input', o qual o usuário deverá entrar com uma string no formato LaTeX sem precisar declarar o ambiente matemático ('$'). Para usar o programa, basta iniciar o arquivo latex_preview.py, que já está integrado com o código de operações calculator.py. Após isso, a GUI já aparecerá em uma janela separada para que o usuário possa usar.
 #### Escolher operação
 
-Após o usuário fornecer a entrada, basta que ele escolha uma das opções disponíveis nos botões da interface.
+Após o usuário fornecer a entrada, basta que ele escolha uma das opções disponíveis: preview ou calcular.
 
-- Preview: este botão fará com que o usuário entre com usuário possa visualizar o output do seu código para verificar se escreveu tudo certo. Essa função já está completamente implementada até o presente momento e conta com grande parte dos comandos disponíveis no ambiente matemático LaTeX
-- Calcular: este botão faz cálculos de algumas operações do ambiente matemático, que já foram mencionados anteriormente. Até o momento só é possível entrar com strings mais simples porque o Parser que eu estou desenvolvendo no ANTLR 4 ainda não está completamente desenvolvido. Ou seja, pode-se integrar funções complexas se for a única atividade, mas o algoritmo teria dificuldade para integrar funções em forma de fração ou derivada incluídas, por exemplo.
+- Preview: esta feature faz com que o usuário visualize o output do seu código para verificar se escreveu tudo certo. Essa função já está completamente implementada até o presente momento e conta com grande parte dos comandos disponíveis no ambiente matemático LaTeX. Para utilizar essa feature, o usuário deve entrar com o seu código entre dois pontos antecedido de 'preview'. Ou seja, se quiser visualizar o preview de 'a+b', o código de entrada deve ser **preview: a+b : **  
+- Calcular: esta feature faz cálculos de algumas operações do ambiente matemático, que já foram mencionados anteriormente. O código já está implementado com as operações que foram descritas anteriormente. Para usar, bsta entrar a equação que deseja calcular diretamente na GUI.
 
 #### Exemplo
 
+Fotos de exemplos tanto da feature preview quanto da 'calcular' foram adicionadas ao repositório e podem ser acessadas como exemplo pelo seguinte [LINK](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/tree/master/imagens). Abaixo seguem alguns prints do funcionamento do código.
+
 ##### Preview
-|Input|Output  |
-|--|--|
-| \frac{a}{b} | $\frac{a}{b}$ |
-| \int \sin(x)dx|$\int \sin(x)dx$ |
+
+![preview_2](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/blob/master/imagens/preview_eq2.png?raw=true)
+
+![preview_1](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/blob/master/imagens/preview_eq3.png?raw=true)
 
 ##### Calcular
 
-|Input|Output  |
-|--|--|
-| \frac{6}{2} | $3$ |
-| \int \sin(x)dx|$-\cos(x)$ |
+![Simplificação](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/blob/master/imagens/calc_eq4.png?raw=true)
 
-
+![Integral indefinida](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/blob/master/imagens/calc_eq2.png?raw=true)
 
 ## Fluxograma
 
@@ -76,5 +76,13 @@ Após o usuário fornecer a entrada, basta que ele escolha uma das opções disp
 
 ![Diagrama UML](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/blob/master/UML_texcalculator.png?raw=true)
 
-## Esboço do layout
+## Futuras implementações
+
+### Aprimoramento da GUI
+O código cumpriu o seu propósito e agora o próximo passo é tornar a interface mais amigável por meiod e adição de atalhos de forma que iniciantes e leigos em LaTeX possam também usufruir da ferramenta ao máximo.
 ![Layout do programa feito no Adobe Illustrator](https://github.com/PEE-2019-ELO-COM/Erick_TeXcalculator/blob/master/main_layout.png?raw=true)
+
+### Incluir mais funções
+
+É desejável que em uma futura atualização sejam implementadas mais operações ao repertório da calculadora tais como operações vetoriais/ matriciais.
+
